@@ -1,0 +1,74 @@
+---
+const currentYear = new Date().getFullYear();
+const locations = [
+  { city: "Toronto", address: "600 King St W, Toronto, ON M5V 1M3" },
+  { city: "Calgary", address: "2116 4 St SW, Calgary, AB T2S 1W7" },
+];
+---
+
+<footer class="bg-secondary-800 text-white pt-12 pb-6">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="font-display text-xl mb-4 text-white">Añejo</h3>
+        <p class="text-secondary-300 mb-4">Authentic Mexican cuisine and handcrafted tequila cocktails in a vibrant atmosphere.</p>
+        <div class="flex space-x-4">
+          <a href="#" aria-label="Facebook" class="text-secondary-300 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9 21.59 18.03 20.39 19.62 18.59C21.2 16.79 22.04 14.48 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="text-secondary-300 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2ZM12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7ZM18.5 6.75C18.5 6.41848 18.3683 6.10054 18.1339 5.86612C17.8995 5.6317 17.5815 5.5 17.25 5.5C16.9185 5.5 16.6005 5.6317 16.3661 5.86612C16.1317 6.10054 16 6.41848 16 6.75C16 7.08152 16.1317 7.39946 16.3661 7.63388C16.6005 7.8683 16.9185 8 17.25 8C17.5815 8 17.8995 7.8683 18.1339 7.63388C18.3683 7.39946 18.5 7.08152 18.5 6.75ZM12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9Z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="text-secondary-300 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10V10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.19 14.41 4.53 14.44 3.89 14.31C4.16 15.14 4.69 15.86 5.4 16.39C6.1 16.91 6.95 17.21 7.82 17.24C6.3 18.43 4.46 19.05 2.56 19.01C2.22 19.01 1.88 18.99 1.54 18.96C3.44 20.25 5.7 20.95 8 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="font-display text-xl mb-4 text-white">Locations</h3>
+        <ul class="space-y-3">
+          {locations.map(location => (
+            <li>
+              <h4 class="font-medium text-white">{location.city}</h4>
+              <p class="text-secondary-300">{location.address}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="font-display text-xl mb-4 text-white">Hours</h3>
+        <ul class="space-y-1 text-secondary-300">
+          <li class="flex justify-between">
+            <span>Monday - Thursday</span>
+            <span>5pm - 11pm</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Friday - Saturday</span>
+            <span>5pm - 12am</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Sunday</span>
+            <span>5pm - 10pm</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="border-t border-secondary-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-secondary-400 text-sm">&copy; {currentYear} Añejo Restaurant Group. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-secondary-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+        <a href="#" class="text-secondary-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+        <a href="#" class="text-secondary-400 hover:text-white text-sm transition-colors">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</footer>

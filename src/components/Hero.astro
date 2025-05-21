@@ -1,0 +1,52 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  imageSrc: string;
+  position?: "center" | "top" | "bottom";
+  overlay?: boolean;
+  height?: "sm" | "md" | "lg" | "xl";
+}
+
+const { 
+  title, 
+  subtitle, 
+  imageSrc,
+  position = "center",
+  overlay = true,
+  height = "md"
+} = Astro.props;
+
+const positions = {
+  center: "bg-center",
+  top: "bg-top",
+  bottom: "bg-bottom"
+};
+
+const heights = {
+  sm: "h-64 md:h-80",
+  md: "h-80 md:h-96",
+  lg: "h-96 md:h-[32rem]",
+  xl: "h-[32rem] md:h-[40rem]"
+};
+---
+
+<div 
+  class={`relative ${heights[height]} overflow-hidden`}
+  style={`background-image: url(${imageSrc}); background-size: cover; ${positions[position]}`}
+>
+  {overlay && (
+    <div class="absolute inset-0 bg-secondary-900/40"></div>
+  )}
+  <div class="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center relative z-10">
+    <h1 class="font-display text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-4 max-w-3xl animate-fade-in">
+      {title}
+    </h1>
+    {subtitle && (
+      <p class="text-white text-lg md:text-xl max-w-2xl animate-slide-up">
+        {subtitle}
+      </p>
+    )}
+    <slot />
+  </div>
+</div>

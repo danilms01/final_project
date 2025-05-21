@@ -1,0 +1,345 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Hero from '../components/Hero.astro';
+
+const tiers = [
+  { spend: 500, bonus: 10 },
+  { spend: 2500, bonus: 15 },
+  { spend: 5000, bonus: 20 },
+  { spend: 10000, bonus: 25 },
+  { spend: 15000, bonus: 30 }
+];
+---
+
+<Layout 
+  title="Corporate Gift Cards - Anejo Mexican Restaurant"
+  description="Anejo's corporate gift card program for businesses. Receive up to 30% back in bonus cards for client gifts, employee rewards, and business milestones."
+>
+  <Hero 
+    title="Corporate Gift Card Program"
+    subtitle="Perfect for employee rewards, client appreciation, and business milestones."
+    imageSrc="https://images.pexels.com/photos/7045703/pexels-photo-7045703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="font-display text-3xl font-bold text-secondary-800 mb-4">Why Choose Anejo for Corporate Gifting?</h2>
+        <p class="text-secondary-600 text-lg mb-8">
+          Receive up to 30% back in bonus gift cards when you order in bulk through Anejo's Corporate Gift Card Program. Perfect for employee rewards, client appreciation, and company milestones — with customizable cards and no extra fees.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="bg-secondary-50 p-6 rounded-lg">
+          <div class="text-primary-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-secondary-800 mb-2">Elevated Dining Experience</h3>
+          <p class="text-secondary-600">Give the gift of bold Mexican flavors, handcrafted cocktails, and vibrant atmosphere.</p>
+        </div>
+
+        <div class="bg-secondary-50 p-6 rounded-lg">
+          <div class="text-primary-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-secondary-800 mb-2">Perfect for Teams & Clients</h3>
+          <p class="text-secondary-600">Ideal for employee rewards, client appreciation, and business milestones.</p>
+        </div>
+
+        <div class="bg-secondary-50 p-6 rounded-lg">
+          <div class="text-primary-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-secondary-800 mb-2">Bulk Discounts</h3>
+          <p class="text-secondary-600">Save up to 30% on large orders starting at $500. The more you spend, the more you save.</p>
+        </div>
+
+        <div class="bg-secondary-50 p-6 rounded-lg">
+          <div class="text-primary-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 11V9a2 2 0 00-2-2m2 4v4a2 2 0 104 0v-1m-4-3H9m2 0h4m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-secondary-800 mb-2">Custom Branding</h3>
+          <p class="text-secondary-600">Add your company logo to digital or physical cards at no extra cost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-secondary-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl font-bold text-secondary-800 mb-4">Bonus Card Program</h2>
+        <p class="text-secondary-600 text-lg max-w-3xl mx-auto">
+          The more you spend, the more you get back. Our tiered bonus structure rewards larger orders with greater benefits.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="rounded-xl bg-white shadow-md overflow-hidden">
+          <div class="bg-primary-600 py-4 px-6">
+            <h3 class="text-white font-display text-xl font-semibold">Bonus Gift Card Tiers</h3>
+          </div>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="bg-secondary-100">
+                  <th class="py-4 px-6 text-left text-secondary-700 font-semibold">Spend Amount</th>
+                  <th class="py-4 px-6 text-center text-secondary-700 font-semibold">Bonus Percentage</th>
+                  <th class="py-4 px-6 text-right text-secondary-700 font-semibold">Bonus Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tiers.map((tier, index) => (
+                  <tr class={index % 2 === 0 ? "bg-white" : "bg-secondary-50"}>
+                    <td class="py-4 px-6 text-secondary-800 font-medium">${tier.spend.toLocaleString()}</td>
+                    <td class="py-4 px-6 text-center text-secondary-800">{tier.bonus}%</td>
+                    <td class="py-4 px-6 text-right text-success-700 font-semibold">${(tier.spend * tier.bonus / 100).toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <p class="text-center text-secondary-600 mt-4">
+          *Bonus gift cards are issued at the time of purchase and can be used for any future visit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-accent-600 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-display text-3xl font-bold mb-6">Ready to Place a Corporate Order?</h2>
+        <p class="text-lg mb-8">
+          Fill out the form below and our corporate gift card specialist will contact you within one business day to discuss your order.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <form class="bg-white rounded-lg p-6 md:p-8 shadow-lg text-secondary-800">
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="company" class="block text-secondary-700 font-medium mb-2">Company Name</label>
+              <input 
+                type="text" 
+                id="company" 
+                name="company" 
+                required
+                class="w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
+              />
+            </div>
+            <div>
+              <label for="contact-name" class="block text-secondary-700 font-medium mb-2">Contact Name</label>
+              <input 
+                type="text" 
+                id="contact-name" 
+                name="contact-name" 
+                required
+                class="w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
+              />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="email" class="block text-secondary-700 font-medium mb-2">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
+              />
+            </div>
+            <div>
+              <label for="phone" class="block text-secondary-700 font-medium mb-2">Phone Number</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                required
+                class="w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
+              />
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label for="amount" class="block text-secondary-700 font-medium mb-2">Estimated Order Amount</label>
+            <select 
+              id="amount" 
+              name="amount" 
+              required
+              class="w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
+            >
+              <option value="">Select Amount Range</option>
+              <option value="500-2500">$500 - $2,500</option>
+              <option value="2500-5000">$2,500 - $5,000</option>
+              <option value="5000-10000">$5,000 - $10,000</option>
+              <option value="10000-15000">$10,000 - $15,000</option>
+              <option value="15000+">$15,000+</option>
+            </select>
+          </div>
+
+          <div class="mb-6">
+            <p class="block text-secondary-700 font-medium mb-2">Card Type</p>
+            <div class="flex gap-4">
+              <label class="inline-flex items-center">
+                <input type="radio" name="card-type" value="digital" class="text-primary-600 focus:ring-primary-500" checked />
+                <span class="ml-2">Digital Cards</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="card-type" value="physical" class="text-primary-600 focus:ring-primary-500" />
+                <span class="ml-2">Physical Cards</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="card-type" value="both" class="text-primary-600 focus:ring-primary-500" />
+                <span class="ml-2">Both</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-secondary-700 font-medium mb-2">Custom Branding</label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" name="custom-branding" class="rounded text-primary-600 focus:ring-primary-500" />
+              <span class="ml-2">Yes, I would like to add my company logo to the gift cards</span>
+            </label>
+          </div>
+
+          <div class="mb-6">
+            <label for="message" class="block text-secondary-700 font-medium mb-2">Additional Information</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="3"
+              class="w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
+            ></textarea>
+          </div>
+
+          <div class="mt-8">
+            <Button type="submit" variant="secondary" size="lg" fullWidth={true}>
+              Submit Inquiry
+            </Button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl font-bold text-secondary-800 mb-6 text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+          <div class="border border-secondary-200 rounded-lg overflow-hidden">
+            <button 
+              class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-secondary-50 hover:bg-secondary-100 transition-colors"
+              aria-expanded="false"
+            >
+              <span class="font-medium text-secondary-800">What is the minimum order amount for corporate gift cards?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary-600 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden p-4 border-t border-secondary-200">
+              <p class="text-secondary-700">
+                The minimum order amount to qualify for our corporate program is $500. This qualifies you for the 10% bonus tier.
+              </p>
+            </div>
+          </div>
+          
+          <div class="border border-secondary-200 rounded-lg overflow-hidden">
+            <button 
+              class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-secondary-50 hover:bg-secondary-100 transition-colors"
+              aria-expanded="false"
+            >
+              <span class="font-medium text-secondary-800">How does the custom branding work?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary-600 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden p-4 border-t border-secondary-200">
+              <p class="text-secondary-700">
+                We can add your company logo to both digital and physical gift cards at no additional cost. You'll simply need to provide a high-resolution version of your logo, and our design team will take care of the rest.
+              </p>
+            </div>
+          </div>
+          
+          <div class="border border-secondary-200 rounded-lg overflow-hidden">
+            <button 
+              class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-secondary-50 hover:bg-secondary-100 transition-colors"
+              aria-expanded="false"
+            >
+              <span class="font-medium text-secondary-800">Can we order different denominations in one bulk order?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary-600 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden p-4 border-t border-secondary-200">
+              <p class="text-secondary-700">
+                Yes, you can mix and match different gift card denominations within a single order. For example, you could order 10 cards at $50 each and 5 cards at $100 each. The bonus tier is determined by the total order amount.
+              </p>
+            </div>
+          </div>
+          
+          <div class="border border-secondary-200 rounded-lg overflow-hidden">
+            <button 
+              class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-secondary-50 hover:bg-secondary-100 transition-colors"
+              aria-expanded="false"
+            >
+              <span class="font-medium text-secondary-800">How long does it take to process corporate orders?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary-600 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden p-4 border-t border-secondary-200">
+              <p class="text-secondary-700">
+                Digital gift cards are typically processed and delivered within 1-2 business days after payment. Physical gift cards require 3-5 business days for processing, plus shipping time. For urgent orders, please let us know and we'll do our best to accommodate your timeline.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // FAQ toggle functionality
+  const faqToggles = document.querySelectorAll('.faq-toggle');
+  
+  faqToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const content = toggle.nextElementSibling;
+      const icon = toggle.querySelector('svg');
+      
+      // Toggle aria-expanded
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      
+      // Toggle content visibility
+      content.classList.toggle('hidden');
+      
+      // Rotate icon
+      if (expanded) {
+        icon.classList.remove('rotate-180');
+      } else {
+        icon.classList.add('rotate-180');
+      }
+    });
+  });
+</script>
