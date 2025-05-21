@@ -15,15 +15,15 @@ import Hero from '../components/Hero.astro';
   />
 
   <section class="py-16 bg-white">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="text-center mb-12">
+    <div class="container mx-auto px-4 flex flex-col items-center"> {/* Centering the content */}
+      <div class="text-center mb-12 max-w-4xl">
         <h2 class="font-display text-3xl font-bold text-secondary-800 mb-4">Check Your Balance</h2>
         <p class="text-secondary-600 text-lg max-w-2xl mx-auto">
           Enter your gift card number below to check your current balance and view your transaction history.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-5 gap-8">
+      <div class="grid md:grid-cols-5 gap-8 w-full max-w-4xl"> {/* Ensuring the grid takes available width up to max-w-4xl */}
         <div class="md:col-span-2">
           <form id="balance-form" class="bg-secondary-50 rounded-lg p-6 shadow-md">
             <div class="mb-6">
@@ -64,7 +64,16 @@ import Hero from '../components/Hero.astro';
           </div>
         </div>
 
-        <div id="balance-results" class="md:col-span-3 hidden">
+        <!-- Updated Image Section -->
+        <div class="md:col-span-2 flex items-center justify-center"> {/* Changed from md:col-span-1 to md:col-span-2 */}
+          <img 
+            src="https://c8.alamy.com/comp/2B2A597/icon-for-balance-check-balance-2B2A597.jpg" 
+            alt="Check Balance Icon" 
+            class="rounded-lg shadow-md w-full h-auto object-contain max-h-[900px]"
+          />
+        </div>
+
+        <div id="balance-results" class="md:col-span-1 hidden"> {/* Adjusted from md:col-span-2 to md:col-span-1 */}
           <div class="bg-white border border-secondary-200 rounded-lg shadow-md overflow-hidden">
             <div class="bg-primary-600 py-4 px-6">
               <h3 class="text-white font-display text-xl font-semibold">Gift Card Details</h3>
@@ -113,12 +122,12 @@ import Hero from '../components/Hero.astro';
   </section>
 
   <section class="py-16 bg-secondary-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
+    <div class="container mx-auto px-4 flex flex-col items-center"> {/* Centering container */}
+      <div class="text-center mb-12 w-full max-w-3xl"> {/* Title block centered */}
         <h2 class="font-display text-3xl font-bold text-secondary-800 mb-4">Gift Card FAQs</h2>
       </div>
 
-      <div class="max-w-3xl mx-auto space-y-4">
+      <div class="max-w-3xl w-full space-y-4"> {/* FAQ items container centered */}
         <div class="border border-secondary-200 rounded-lg overflow-hidden">
           <button 
             class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-white hover:bg-secondary-50 transition-colors"
@@ -197,38 +206,44 @@ import Hero from '../components/Hero.astro';
   
   faqToggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
-      const content = toggle.nextElementSibling;
+      const content = toggle.nextElementSibling as HTMLElement | null;
       const icon = toggle.querySelector('svg');
       
       // Toggle aria-expanded
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', !expanded);
+      const isCurrentlyExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      const newExpandedState = !isCurrentlyExpanded;
+      toggle.setAttribute('aria-expanded', String(newExpandedState)); // Explicitly use String()
       
       // Toggle content visibility
-      content.classList.toggle('hidden');
+      if (content) {
+        content.classList.toggle('hidden');
+      }
       
-      // Rotate icon
-      if (expanded) {
-        icon.classList.remove('rotate-180');
-      } else {
-        icon.classList.add('rotate-180');
+      // Rotate icon based on the new state
+      if (icon) {
+        if (newExpandedState) {
+          icon.classList.add('rotate-180');
+        } else {
+          icon.classList.remove('rotate-180');
+        }
       }
     });
   });
 
   // Balance checker simulation
-  const balanceForm = document.getElementById('balance-form');
-  const balanceResults = document.getElementById('balance-results');
-  const displayCardNumber = document.getElementById('display-card-number');
-  const initialBalance = document.getElementById('initial-balance');
-  const currentBalance = document.getElementById('current-balance');
-  const transactionHistory = document.getElementById('transaction-history');
+  const balanceForm = document.getElementById('balance-form') as HTMLFormElement | null;
+  const balanceResults = document.getElementById('balance-results') as HTMLElement | null;
+  const displayCardNumber = document.getElementById('display-card-number') as HTMLElement | null;
+  const initialBalance = document.getElementById('initial-balance') as HTMLElement | null;
+  const currentBalance = document.getElementById('current-balance') as HTMLElement | null;
+  const transactionHistory = document.getElementById('transaction-history') as HTMLElement | null;
+  const cardNumberInput = document.getElementById('card-number') as HTMLInputElement | null;
 
-  if (balanceForm) {
-    balanceForm.addEventListener('submit', (e) => {
+  if (balanceForm && cardNumberInput) {
+    balanceForm.addEventListener('submit', (e: Event) => {
       e.preventDefault();
       
-      const cardNumber = document.getElementById('card-number').value;
+      const cardNumber = cardNumberInput.value;
       
       // Display masked card number
       if (displayCardNumber) {

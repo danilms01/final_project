@@ -9,19 +9,25 @@ const features = [
     title: "Gift Cards",
     description: "Perfect for birthdays, holidays, or any special occasion. Share the authentic Mexican dining experience.",
     imageSrc: "https://images.pexels.com/photos/7613552/pexels-photo-7613552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    href: "/gift-cards"
+    href: "/gift-cards",
+    buttonText: "Purchase Gift Cards",
+    buttonVariant: "primary" as "primary" | "secondary" | "outline" | "text" // Added type assertion
   },
   {
     title: "Corporate Gift Cards",
     description: "Reward employees and thank clients with bulk gift cards featuring exclusive bonus offers.",
     imageSrc: "https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    href: "/corporate-gift-cards"
+    href: "/corporate-gift-cards",
+    buttonText: "Corporate Orders",
+    buttonVariant: "secondary" as "primary" | "secondary" | "outline" | "text" // Added type assertion
   },
   {
     title: "Gift Card Balance",
     description: "Easily check your gift card balance and view your complete transaction history.",
     imageSrc: "https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    href: "/gift-card-balance"
+    href: "/gift-card-balance",
+    buttonText: "Check Balance",
+    buttonVariant: "outline" as "primary" | "secondary" | "outline" | "text" // Added type assertion
   }
 ];
 ---
@@ -47,21 +53,18 @@ const features = [
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {features.map(feature => (
-          <FeatureCard
-            title={feature.title}
-            description={feature.description}
-            imageSrc={feature.imageSrc}
-            href={feature.href}
-          />
+          <div class="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg"> {/* Enhanced wrapper */}
+            <FeatureCard
+              title={feature.title}
+              description={feature.description}
+              imageSrc={feature.imageSrc}
+              href={feature.href}
+            />
+            <div class="mt-6"> {/* Increased margin for the button */}
+              <Button href={feature.href} variant={feature.buttonVariant} size="md">{feature.buttonText}</Button>
+            </div>
+          </div>
         ))}
-      </div>
-      
-      <div class="mt-12 text-center">
-        <div class="flex flex-wrap gap-4 justify-center">
-          <Button href="/gift-cards" variant="primary">Purchase Gift Cards</Button>
-          <Button href="/corporate-gift-cards" variant="secondary">Corporate Orders</Button>
-          <Button href="/gift-card-balance" variant="outline">Check Balance</Button>
-        </div>
       </div>
     </div>
   </section>
